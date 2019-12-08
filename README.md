@@ -28,6 +28,7 @@ this program takes an input and checks whether the input is equal to 5, if yes, 
 
 ### Argument types
 every argument can be one of the following types:
+
 | Name      | Prefix    | Description                                                                                                                          |
 | :---      | :---      | :---                                                                                                                                 |
 | Littertal | NO PREFIX | represents the mode introduced on day 5, which is not a reference to another address, but represents a value.                        |
