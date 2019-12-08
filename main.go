@@ -9,15 +9,53 @@ import (
 )
 
 var (
-	F_DBG    bool
-	Commands map[string]command
-	Labels   map[string]int
+	F_DBG                  bool
+	Commands               instructionset
+	Labels                 map[string]int
+	BuildinInstructionSets map[string]instructionset = map[string]instructionset{
+		"standard": instructionset{
+			"add": command{
+				Instruction: 1,
+				ArgCount:    3,
+			},
+			"multi": command{
+				Instruction: 2,
+				ArgCount:    3,
+			},
+			"input": command{
+				Instruction: 3,
+				ArgCount:    1,
+			},
+			"output": command{
+				Instruction: 4,
+				ArgCount:    1,
+			},
+			"jmpit": command{
+				Instruction: 5,
+				ArgCount:    2,
+			},
+			"jmpif": command{
+				Instruction: 6,
+				ArgCount:    2,
+			},
+			"less": command{
+				Instruction: 7,
+				ArgCount:    3,
+			},
+			"equal": command{
+				Instruction: 8,
+				ArgCount:    3,
+			},
+		},
+	}
 )
 
 type command struct {
 	Instruction int
 	ArgCount    int
 }
+
+type instructionset map[string]command
 
 func main() {
 	InputFileName := ""
@@ -69,7 +107,7 @@ func main() {
 	}
 	f.Close()
 
-	LoadCommands()
+	loadInstructionset("standard")
 	Output := make([]*int, 0)
 	for LineID, _ := range lines {
 		Output = append(Output, CompileCommand(lines[LineID], Output, LineID)...)
@@ -127,38 +165,6 @@ func CompileCommand(args []string, output []*int, line int) []*int {
 	return out
 }
 
-func LoadCommands() {
-	Commands = make(map[string]command)
-	Commands["add"] = command{
-		Instruction: 1,
-		ArgCount:    3,
-	}
-	Commands["multi"] = command{
-		Instruction: 2,
-		ArgCount:    3,
-	}
-	Commands["input"] = command{
-		Instruction: 3,
-		ArgCount:    1,
-	}
-	Commands["output"] = command{
-		Instruction: 4,
-		ArgCount:    1,
-	}
-	Commands["jmpit"] = command{
-		Instruction: 5,
-		ArgCount:    2,
-	}
-	Commands["jmpif"] = command{
-		Instruction: 6,
-		ArgCount:    2,
-	}
-	Commands["less"] = command{
-		Instruction: 7,
-		ArgCount:    3,
-	}
-	Commands["equal"] = command{
-		Instruction: 8,
-		ArgCount:    3,
-	}
+func loadInstructionset(name string) {
+	Commands = BuildinInstructionSets[name]
 }
