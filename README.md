@@ -25,3 +25,13 @@ END
 END
 ```
 this program takes an input and checks whether the input is equal to 5, if yes, it outputs 0, if not, it outputs 999.
+
+### Argument types
+every argument can be one of the following types:
+| Name      | Prefix    | Description                                                                                                                          |
+| :---      | :---      | :---                                                                                                                                 |
+| Littertal | NO PREFIX | represents the mode introduced on day 5, which is not a reference to another address, but represents a value.                        |
+| Pointer   | *         | represents the first mode introduced on day 2, which is a reference to another address.                                              |
+| Label     | :         | defines a name wich can be used anywhere in the code wich will be replaced by a Pointer to the value following the label Definition. |
+| Variable  | _         | can be used just like a Pointer, but the address is the specified address plus the address of the last END statement. |
+| Reference | NO PREFIX | a reference will be replaced by the Address of the label wich name is used as argument. |
