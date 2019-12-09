@@ -46,6 +46,10 @@ var (
 				Instruction: 8,
 				ArgCount:    3,
 			},
+			"srelbase": command{
+				Instruction: 9,
+				ArgCount:    1,
+			},
 		},
 		"standard5": instructionset{ //Day5 standard
 			"add": command{
