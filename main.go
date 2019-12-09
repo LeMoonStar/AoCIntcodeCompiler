@@ -13,7 +13,7 @@ var (
 	Commands               instructionset
 	Labels                 map[string]int
 	BuildinInstructionSets map[string]instructionset = map[string]instructionset{
-		"standard": instructionset{
+		"standard": instructionset{ //Day9 standard
 			"add": command{
 				Instruction: 1,
 				ArgCount:    3,
@@ -44,6 +44,50 @@ var (
 			},
 			"equal": command{
 				Instruction: 8,
+				ArgCount:    3,
+			},
+		},
+		"standard5": instructionset{ //Day5 standard
+			"add": command{
+				Instruction: 1,
+				ArgCount:    3,
+			},
+			"multi": command{
+				Instruction: 2,
+				ArgCount:    3,
+			},
+			"input": command{
+				Instruction: 3,
+				ArgCount:    1,
+			},
+			"output": command{
+				Instruction: 4,
+				ArgCount:    1,
+			},
+			"jmpit": command{
+				Instruction: 5,
+				ArgCount:    2,
+			},
+			"jmpif": command{
+				Instruction: 6,
+				ArgCount:    2,
+			},
+			"less": command{
+				Instruction: 7,
+				ArgCount:    3,
+			},
+			"equal": command{
+				Instruction: 8,
+				ArgCount:    3,
+			},
+		},
+		"standard2": instructionset{ //Day2 standard
+			"add": command{
+				Instruction: 1,
+				ArgCount:    3,
+			},
+			"multi": command{
+				Instruction: 2,
 				ArgCount:    3,
 			},
 		},
