@@ -18,7 +18,7 @@ the next example shows how to use labels in combination with jump commands:
 ```
 input in
 equal :in 0 5 flag
-jmpit :flag jmpto
+jmpit :flag 0 jmpto
 output 999
 END
 :jmpto output 0
