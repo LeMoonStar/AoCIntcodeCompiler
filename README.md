@@ -33,7 +33,7 @@ every argument can be one of the following types:
 | :---        | :---      | :---                                                                                                                                 |
 | Littertal   | NO PREFIX | represents the mode introduced on day 5, which is not a reference to another address, but represents a value.                        |
 | Pointer     | *         | represents the first mode introduced on day 2, which is a reference to another address.                                              |
-| REL-Pointer | *         | represents the third mode, wich was introduced on day 9, which is just like a reference, but counting from a Relbase instead of 0    |
+| REL-Pointer | ~         | represents the third mode, wich was introduced on day 9, which is just like a reference, but counting from a Relbase instead of 0    |
 | Label       | :         | defines a name wich can be used anywhere in the code wich will be replaced by a Pointer to the value following the label Definition. |
 | Variable    | _         | can be used just like a Pointer, but the address is the specified address plus the address of the last END statement.                |
 | Reference   | NO PREFIX | a reference will be replaced by the Address of the label wich name is used as argument.                                              |
