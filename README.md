@@ -29,23 +29,25 @@ this program takes an input and checks whether the input is equal to 5, if yes, 
 ### Argument types
 every argument can be one of the following types:
 
-| Name      | Prefix    | Description                                                                                                                          |
-| :---      | :---      | :---                                                                                                                                 |
-| Littertal | NO PREFIX | represents the mode introduced on day 5, which is not a reference to another address, but represents a value.                        |
-| Pointer   | *         | represents the first mode introduced on day 2, which is a reference to another address.                                              |
-| Label     | :         | defines a name wich can be used anywhere in the code wich will be replaced by a Pointer to the value following the label Definition. |
-| Variable  | _         | can be used just like a Pointer, but the address is the specified address plus the address of the last END statement.                |
-| Reference | NO PREFIX | a reference will be replaced by the Address of the label wich name is used as argument.                                              |
+| Name        | Prefix    | Description                                                                                                                          |
+| :---        | :---      | :---                                                                                                                                 |
+| Littertal   | NO PREFIX | represents the mode introduced on day 5, which is not a reference to another address, but represents a value.                        |
+| Pointer     | *         | represents the first mode introduced on day 2, which is a reference to another address.                                              |
+| REL-Pointer | *         | represents the third mode, wich was introduced on day 9, which is just like a reference, but counting from a Relbase instead of 0    |
+| Label       | :         | defines a name wich can be used anywhere in the code wich will be replaced by a Pointer to the value following the label Definition. |
+| Variable    | _         | can be used just like a Pointer, but the address is the specified address plus the address of the last END statement.                |
+| Reference   | NO PREFIX | a reference will be replaced by the Address of the label wich name is used as argument.                                              |
 
 ### (standard)commands
 
-| Name   | Arguments |Description                                                                                              |
-| :--    | :---      | :---                                                                                                    |
-| add    | 3         | adds argument 1 and argument 2 and overwrites argument 3 wit the result.                                |
-| multi  | 3         | multiplys argument 1 and argument 2 and overwrites argument 3 wit the result.                           |
-| input  | 1         | takes an input and overwrites argument 1 with it.                                                       |
-| output | 1         | outputs argument 1.                                                                                     |
-| jmpit  | 2         | jumps to address in argument 2 if argument 1 is 1.                                                      |
-| jmpif  | 2         | jumps to address in argument 2 if argument 1 is 0.                                                      |
-| less   | 3         | checks if argument 1 is less than argument 2 and writes eigher 1 for true or 0 for false to argument 3. |
-| equal  | 3         | checks if argument 1 is equal to argument 2 and writes eigher 1 for true or 0 for false to argument 3.  |
+| Name     | Arguments |Description                                                                                              |
+| :--      | :---      | :---                                                                                                    |
+| add      | 3         | adds argument 1 and argument 2 and overwrites argument 3 wit the result.                                |
+| multi    | 3         | multiplys argument 1 and argument 2 and overwrites argument 3 wit the result.                           |
+| input    | 1         | takes an input and overwrites argument 1 with it.                                                       |
+| output   | 1         | outputs argument 1.                                                                                     |
+| jmpit    | 2         | jumps to address in argument 2 if argument 1 is 1.                                                      |
+| jmpif    | 2         | jumps to address in argument 2 if argument 1 is 0.                                                      |
+| less     | 3         | checks if argument 1 is less than argument 2 and writes eigher 1 for true or 0 for false to argument 3. |
+| equal    | 3         | checks if argument 1 is equal to argument 2 and writes eigher 1 for true or 0 for false to argument 3.  |
+| srelbase | 1         | sets the relative base for relative pointers.                                                           |
